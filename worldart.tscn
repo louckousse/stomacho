@@ -30,7 +30,7 @@ load_path = "res://.import/tileset.png-5f11a69f3c58a4f1fe6e6e8f75d4e369.stex"
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[node name="worldart" type="Node2D" index="0"]
+[node name="worldart" type="Node2D"]
 
 [node name="wall" type="Sprite" parent="." index="0"]
 

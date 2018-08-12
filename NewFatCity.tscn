@@ -34,7 +34,7 @@ extents = Vector2( 3.6908, 16.3174 )
 custom_solver_bias = 0.0
 extents = Vector2( 4.81509, 15.8635 )
 
-[node name="NewFatCity" type="Node2D"]
+[node name="NewFatCity" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
