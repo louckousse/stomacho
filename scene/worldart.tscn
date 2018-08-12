@@ -1,0 +1,104 @@
+[gd_scene load_steps=7 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+
+flags = 0
+load_path = "res://.import/tileset.png-5f11a69f3c58a4f1fe6e6e8f75d4e369.stex"
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
+[sub_resource type="StreamTexture" id=3]
+
+flags = 0
+load_path = "res://.import/tileset.png-5f11a69f3c58a4f1fe6e6e8f75d4e369.stex"
+
+[sub_resource type="StreamTexture" id=4]
+
+flags = 0
+load_path = "res://.import/tileset.png-5f11a69f3c58a4f1fe6e6e8f75d4e369.stex"
+
+[sub_resource type="StreamTexture" id=5]
+
+flags = 0
+load_path = "res://.import/tileset.png-5f11a69f3c58a4f1fe6e6e8f75d4e369.stex"
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
+[node name="worldart" type="Node2D"]
+
+[node name="wall" type="Sprite" parent="." index="0"]
+
+texture = SubResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 175, 56, 16, 16 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall/StaticBody2D" index="0"]
+
+position = Vector2( 8, 8 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="outdoor" type="Sprite" parent="." index="1"]
+
+position = Vector2( 40, 0 )
+texture = SubResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 22, 104, 16, 16 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="indoor" type="Sprite" parent="." index="2"]
+
+position = Vector2( 20, 0 )
+texture = SubResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 256, 160, 16, 16 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="fence" type="Sprite" parent="." index="3"]
+
+position = Vector2( 60, 0 )
+texture = SubResource( 5 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 245, 49, 16, 16 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="fence" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fence/StaticBody2D" index="0"]
+
+position = Vector2( 8, 8 )
+shape = SubResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+

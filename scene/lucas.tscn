@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/lucas.gd" type="Script" id=1]
+[ext_resource path="res://anim/walk_bottom.tres" type="Animation" id=2]
+[ext_resource path="res://anim/walk_left.tres" type="Animation" id=3]
+[ext_resource path="res://anim/walk_right.tres" type="Animation" id=4]
+[ext_resource path="res://anim/walk_up.tres" type="Animation" id=5]
+
+[sub_resource type="StreamTexture" id=2]
+
+flags = 4
+load_path = "res://.import/hero.png-e2fa91b6366a1fd0bdc33748d1754ad3.stex"
+
+[node name="lucas" type="KinematicBody2D" index="0"]
+
+scale = Vector2( 2, 2 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index", "collision" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = SubResource( 2 )
+vframes = 4
+hframes = 3
+frame = 7
+_sections_unfolded = [ "Animation", "Offset", "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/walk_bottom = ExtResource( 2 )
+anims/walk_left = ExtResource( 3 )
+anims/walk_right = ExtResource( 4 )
+anims/walk_up = ExtResource( 5 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+position = Vector2( -4.90802, 2.48992 )
+build_mode = 0
+polygon = PoolVector2Array( 2.5, -5.8, -0.3, -3.6, 1.2, -0.9, 0, 2, 1.5, 4.7, 9.1, 4.4, 10.5, 1.8, 9, -1.1, 11, -3, 9.6, -4.6, 7.6, -5.8 )
+_sections_unfolded = [ "Transform" ]
+
+
