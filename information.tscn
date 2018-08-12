@@ -7,7 +7,7 @@
 flags = 4
 load_path = "res://.import/empty_stomach.png-61fc2cdf1b659f4da22d0c575e9ac69f.stex"
 
-[node name="Information" type="Node2D" index="0"]
+[node name="Information" type="Node2D"]
 
 modulate = Color( 0.589844, 0.0460815, 0.0460815, 1 )
 self_modulate = Color( 0.0976562, 0.0118256, 0.0118256, 1 )

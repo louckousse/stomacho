@@ -102,7 +102,7 @@ func display_time():
 	var remaining = 300 - (time_now - time_start)
 	var minutes = remaining / 60
 	var seconds = remaining % 60
-	var str_remaining = "%02d : %02d" % [minutes, seconds]
+	var str_remaining = "%02d:%02d" % [minutes, seconds]
 	get_node("../Information/Container/timeleft/time").text = str_remaining
 	get_node("../Information/Container/Sprite/filling").text = "%02d/" % [stomach_filling]
 	get_node("../Information/Container/score").text = "Score: %02d" % [global.score]

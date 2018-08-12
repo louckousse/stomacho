@@ -38,7 +38,7 @@ extents = Vector2( 4.81509, 15.8635 )
 
 _sections_unfolded = [ "Transform" ]
 
-[node name="TileMap2" type="TileMap" parent="." index="0"]
+[node name="world" type="TileMap" parent="." index="0"]
 
 z_index = -1
 mode = 0

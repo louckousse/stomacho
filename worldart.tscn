@@ -5,7 +5,7 @@
 flags = 0
 load_path = "res://.import/tileset.png-5f11a69f3c58a4f1fe6e6e8f75d4e369.stex"
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
@@ -20,17 +20,17 @@ load_path = "res://.import/tileset.png-5f11a69f3c58a4f1fe6e6e8f75d4e369.stex"
 flags = 0
 load_path = "res://.import/tileset.png-5f11a69f3c58a4f1fe6e6e8f75d4e369.stex"
 
-[sub_resource type="StreamTexture" id=6]
+[sub_resource type="StreamTexture" id=5]
 
 flags = 0
 load_path = "res://.import/tileset.png-5f11a69f3c58a4f1fe6e6e8f75d4e369.stex"
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[node name="worldart" type="Node2D"]
+[node name="worldart" type="Node2D" index="0"]
 
 [node name="wall" type="Sprite" parent="." index="0"]
 
@@ -54,7 +54,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall/StaticBody2D" index="0"]
 
 position = Vector2( 8, 8 )
-shape = SubResource( 5 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="outdoor" type="Sprite" parent="." index="1"]
@@ -78,7 +78,7 @@ _sections_unfolded = [ "Region", "Transform" ]
 [node name="fence" type="Sprite" parent="." index="3"]
 
 position = Vector2( 60, 0 )
-texture = SubResource( 6 )
+texture = SubResource( 5 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 245, 49, 16, 16 )
@@ -98,7 +98,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fence/StaticBody2D" index="0"]
 
 position = Vector2( 8, 8 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 
