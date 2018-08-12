@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 # Member variables
 const MOTION_SPEED = 160 # Pixels/second
-var score = 0
+#var score = 0
 var speed = 1
 
 var timer
@@ -10,7 +10,7 @@ var time_now
 var time_start
 
 const STOMACH_CAPACITY = 1000
-var stomach_filling = 0.0 #TODO passer à 0
+var stomach_filling = 0.0
 var puke_coeff = 2
 
 # Fast food variables
@@ -34,10 +34,7 @@ var ofatos_feed = 100
 func _ready():
 	timer = Timer.new()
 	timer.wait_time = 1
-	timer.connect("timeout",self,"_on_timer_timeout") 
-	#timeout is what says in docs, in signals
-	#self is who respond to the callback
-	#_on_timer_timeout is the callback, can have any name
+	timer.connect("timeout",self,"_on_timer_timeout")
 	add_child(timer) #to process
 	timer.start() #to start
 	time_start = OS.get_unix_time()
@@ -46,7 +43,8 @@ func _on_timer_timeout():
 	increment_timeout()
 	has_puke()
 	display_time()
-	stomach_filling -= speed
+	if stomach_filling > 0:
+		stomach_filling -= speed/5.0
 
 func _physics_process(delta):
 	var motion = Vector2()
@@ -104,8 +102,12 @@ func display_time():
 	var remaining = 300 - (time_now - time_start)
 	var minutes = remaining / 60
 	var seconds = remaining % 60
-	var str_remaining = "%02d : %02d\n %2d\n %2d" % [minutes, seconds, stomach_filling, score]
+	var str_remaining = "%02d : %02d" % [minutes, seconds]
 	get_node("../Information/Container/timeleft/time").text = str_remaining
+	get_node("../Information/Container/Sprite/filling").text = "%02d/" % [stomach_filling]
+	get_node("../Information/Container/score").text = "Score: %02d" % [global.score]
+	if remaining == 0:
+		end_game()
 	
 func feed(quantity, timeout):
 	if stomach_filling + quantity > STOMACH_CAPACITY:
@@ -113,7 +115,7 @@ func feed(quantity, timeout):
 		get_node("Sprite").frame = 10
 	elif timeout >= REFILL_TIMEOUT:
 		stomach_filling += quantity
-		score += quantity
+		global.score += quantity
 		return true
 	return false
 
@@ -122,7 +124,7 @@ func has_puke():
 		get_node("Sprite/AnimationPlayer").stop()
 		get_node("Sprite").frame = 9
 		speed = 0
-		score = score - 200 if score > 200 else 0
+		global.score = global.score - 200 if global.score > 200 else 0
 		stomach_filling = stomach_filling - 200 if stomach_filling > 200 else 0
 	
 func puke_probability():
@@ -176,5 +178,18 @@ func _on_LangLebeDieWurst_entered(body):
 func _on_OFatos_entered(body):
 	if body.get_name() == "lucas":
 		if feed(ofatos_feed, ofatos_timeout):
-			ofatos_feed = 0
+			ofatos_timeout = 0
 		display_time()
+
+func end_game():
+		get_node("Sprite/AnimationPlayer").stop()
+		get_node("Sprite").frame = 10
+		timer.stop()
+		get_tree().change_scene("res://ending.tscn")
+
+
+
+
+
+
+

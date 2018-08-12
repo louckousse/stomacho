@@ -13,14 +13,17 @@ load_path = "res://.import/hero.png-87aa9197b739ca3ad1031ac3d1b82853.stex"
 
 [node name="lucas" type="KinematicBody2D"]
 
+scale = Vector2( 2, 2 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index", "collision" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+position = Vector2( 0, -2 )
 texture = SubResource( 1 )
 vframes = 4
 hframes = 3
@@ -43,7 +46,9 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
 
+position = Vector2( -5.2, 0.3 )
 build_mode = 0
-polygon = PoolVector2Array( -3.24493, 7.99139, 3.95175, 7.99139, 6.71476, 4.9071, 5.85083, 2.51777, 7.00744, 1.16839, 3.79111, -2.90001, -3.88749, -3.02852, -7.12893, 1.36116, -6.42211, 2.06798, -7.25744, 3.73864 )
+polygon = PoolVector2Array( 2.5, -5.8, -0.3, -3.6, 1.2, -0.9, 0, 2, 1.5, 4.7, 9.1, 4.4, 10.5, 1.8, 9, -1.1, 11, -3, 9.6, -4.6, 7.6, -5.8 )
+_sections_unfolded = [ "Transform" ]
 
 

@@ -11,8 +11,11 @@ config_version=3
 [application]
 
 config/name="Stomacho"
-run/main_scene="res://NewFatCity.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://start_screen.tscn"
+
+[autoload]
+
+global="*res://global.gd"
 
 [display]
 
