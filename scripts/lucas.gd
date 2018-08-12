@@ -191,5 +191,4 @@ func end_game():
 		get_node("Sprite/AnimationPlayer").stop()
 		get_node("Sprite").frame = 10
 		timer.stop()
-		print("It's over")
 		get_tree().change_scene("res://scene/ending.tscn")
