@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/ending.gd" type="Script" id=1]
 [ext_resource path="res://fonts/source_code_pro_explanations_bold.tres" type="DynamicFont" id=2]
 
-[node name="ending" type="Panel"]
+[node name="ending" type="Panel" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0

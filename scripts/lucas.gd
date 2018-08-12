@@ -105,7 +105,7 @@ func handle_anim():
 
 func display_time():
 	time_now = OS.get_unix_time()
-	var remaining = 300 - (time_now - time_start)
+	var remaining = 3 - (time_now - time_start)
 	var minutes = remaining / 60
 	var seconds = remaining % 60
 	var str_remaining = "%02d:%02d" % [minutes, seconds]
@@ -191,11 +191,5 @@ func end_game():
 		get_node("Sprite/AnimationPlayer").stop()
 		get_node("Sprite").frame = 10
 		timer.stop()
+		print("It's over")
 		get_tree().change_scene("res://scene/ending.tscn")
-
-
-
-
-
-
-

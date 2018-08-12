@@ -11,7 +11,7 @@
 flags = 4
 load_path = "res://.import/hero.png-e2fa91b6366a1fd0bdc33748d1754ad3.stex"
 
-[node name="lucas" type="KinematicBody2D" index="0"]
+[node name="lucas" type="KinematicBody2D"]
 
 scale = Vector2( 2, 2 )
 input_pickable = false
