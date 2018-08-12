@@ -1,4 +1,8 @@
 # Stomacho
+## An original creation for the 42th Ludum Dare 
+### Theme
+
+- You're running out of space
 
 ---
 
